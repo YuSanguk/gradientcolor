@@ -47,21 +47,21 @@ button.addEventListener("click", () => {
   const c2 = color2.innerHTML;
   color_value[palette_number - 1][0] = c1;
   color_value[palette_number - 1][1] = c2;
-  checkbox_value[palette_number - 1][0] = checkbox1.checked;
-  checkbox_value[palette_number - 1][1] = checkbox2.checked;
   const text = "linear-gradient(90deg," + c1 + "," + c2 + ")";
   background.style.background = text;
 });
 
-// copy function
-function copy(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $temp.remove();
-  alert("copied!");
-}
+checkbox1.addEventListener("change", () => {
+  const palette_number = palette.value[7];
+  checkbox_value[palette_number - 1][0] =
+    !checkbox_value[palette_number - 1][0];
+});
+
+checkbox2.addEventListener("change", () => {
+  const palette_number = palette.value[7];
+  checkbox_value[palette_number - 1][1] =
+    !checkbox_value[palette_number - 1][1];
+});
 
 // change select
 const palette_control = () => {
