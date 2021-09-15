@@ -46,6 +46,7 @@ body {
   width: 70px;
   height: 25px;
   transform: translateY(7px);
+  cursor: pointer;
 }
 
 .top .color:hover {
