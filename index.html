@@ -13,7 +13,15 @@
         <input class="inputbox" id="checkbox1" type="checkbox" />
         <span class="color" id="color1" onclick="copy('#color1')">#ffffff</span>
       </div>
-      <button id="button">CHANGE COLOR</button>
+      <div>
+        <button id="button">CHANGE COLOR</button>
+        <select name="palette" id="palette" onchange="palette_control()">
+          <option value="palette1">palette1</option>
+          <option value="palette2">palette2</option>
+          <option value="palette3">palette3</option>
+          <option value="palette4">palette4</option>
+        </select>
+      </div>
       <div>
         <span class="color" id="color2" onclick="copy('#color2')">#000000</span>
         <input class="inputbox" id="checkbox2" type="checkbox" />
