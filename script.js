@@ -13,6 +13,13 @@ let color_value = [
   ["#ffffff", "#000000"],
 ];
 
+let checkbox_value = [
+  [false, false],
+  [false, false],
+  [false, false],
+  [false, false],
+];
+
 // color change
 function create_color() {
   const letters = "0123456789ABCDEF";
@@ -40,6 +47,8 @@ button.addEventListener("click", () => {
   const c2 = color2.innerHTML;
   color_value[palette_number - 1][0] = c1;
   color_value[palette_number - 1][1] = c2;
+  checkbox_value[palette_number - 1][0] = checkbox1.checked;
+  checkbox_value[palette_number - 1][1] = checkbox2.checked;
   const text = "linear-gradient(90deg," + c1 + "," + c2 + ")";
   background.style.background = text;
 });
@@ -57,10 +66,12 @@ function copy(element) {
 // change select
 const palette_control = () => {
   const palette_number = palette.value[7];
-  color2.innerHTML = color_value[palette_number - 1][0];
-  color1.innerHTML = color_value[palette_number - 1][1];
+  color1.innerHTML = color_value[palette_number - 1][0];
+  color2.innerHTML = color_value[palette_number - 1][1];
   const c1 = color1.innerHTML;
   const c2 = color2.innerHTML;
+  checkbox1.checked = checkbox_value[palette_number - 1][0];
+  checkbox2.checked = checkbox_value[palette_number - 1][1];
   const text = "linear-gradient(90deg," + c1 + "," + c2 + ")";
   background.style.background = text;
 };
