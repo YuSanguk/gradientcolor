@@ -31,21 +31,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="script.js"></script>
-    <script>
-      // copy function
-      function copy(element) {
-        var $temp = $("<input>");
-        $("body").append($temp);
-        $temp.val($(element).text()).select();
-        document.execCommand("copy");
-        $temp.remove();
-        Swal.fire({
-          icon: "success",
-          title: "Copied!",
-          showConfirmButton: false,
-          timer: 1200,
-        });
-      }
-    </script>
   </body>
 </html>

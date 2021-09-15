@@ -51,6 +51,21 @@ button.addEventListener("click", () => {
   background.style.background = text;
 });
 
+// copy function
+function copy(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+  Swal.fire({
+    icon: "success",
+    title: "Copied!",
+    showConfirmButton: false,
+    timer: 1200,
+  });
+}
+
 checkbox1.addEventListener("change", () => {
   const palette_number = palette.value[7];
   checkbox_value[palette_number - 1][0] =
